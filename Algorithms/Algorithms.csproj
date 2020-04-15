@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{BE013F04-D2DE-41B2-9572-DB2250965F58}</ProjectGuid>
+    <ProjectGuid>{3D18C71B-2FA4-4934-BE9C-153069E83931}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>ImplementationOfStrategy</RootNamespace>
-    <AssemblyName>ImplementationOfStrategy</AssemblyName>
+    <RootNamespace>Algorithms</RootNamespace>
+    <AssemblyName>Algorithms</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,23 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Enums\Color.cs" />
-    <Compile Include="Enums\Fabric.cs" />
-    <Compile Include="Enums\PaymentMethod.cs" />
-    <Compile Include="Enums\Size.cs" />
-    <Compile Include="EshopContext.cs" />
-    <Compile Include="Database\MyDatabase.cs" />
-    <Compile Include="Products\Tshirt.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Strategies\PaymentStrategy\BankTransfer.cs" />
-    <Compile Include="Strategies\PaymentStrategy\Cash.cs" />
-    <Compile Include="Strategies\PaymentStrategy\CreditCard.cs" />
-    <Compile Include="Strategies\PaymentStrategy\IPaymentMethodStrategy.cs" />
-    <Compile Include="Strategies\TshirtVariationStrategies\ColorVariation.cs" />
-    <Compile Include="Strategies\TshirtVariationStrategies\FabricVariation.cs" />
-    <Compile Include="Strategies\TshirtVariationStrategies\IVariationStrategy.cs" />
-    <Compile Include="Strategies\TshirtVariationStrategies\SizeVariation.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
