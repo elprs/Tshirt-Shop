@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ImplementationOfStrategy.SortingAlgorithms;
+using static ImplementationOfStrategy.SortingAlgorithms.Delegation;
 
 namespace ImplementationOfStrategy
 {
@@ -26,45 +27,41 @@ namespace ImplementationOfStrategy
 
 
 
-       
 
-            MyDatabase myDatabase = new MyDatabase();
+
+            //MyDatabase myDatabase = new MyDatabase();
             //PrintAllItems(myDatabase.tshirts);
 
-            var shirts1 = myDatabase.tshirts.OrderBy(x => x.Color).ToList();
-            PrintAllItems(shirts1);
-            var shirts2 = myDatabase.tshirts.OrderByDescending(x => x.Color).ToList();
-            PrintAllItems(shirts2);
-            var shirts3 = myDatabase.tshirts.OrderBy(x => x.Size).ToList();
-            PrintAllItems(shirts3);
-            var shirts4 = myDatabase.tshirts.OrderByDescending(x => x.Size).ToList();
-            PrintAllItems(shirts4);
-            var shirts5 = myDatabase.tshirts.OrderBy(x => x.Fabric).ToList();
-            PrintAllItems(shirts5);
-            var shirts6 = myDatabase.tshirts.OrderByDescending(x => x.Fabric).ToList();
-            PrintAllItems(shirts6);
+            //var shirts1 = myDatabase.tshirts.OrderBy(x => x.Color).ToList();
+            //PrintAllItems(shirts1);
+            //var shirts2 = myDatabase.tshirts.OrderByDescending(x => x.Color).ToList();
+            //PrintAllItems(shirts2);
+            //var shirts3 = myDatabase.tshirts.OrderBy(x => x.Size).ToList();
+            //PrintAllItems(shirts3);
+            //var shirts4 = myDatabase.tshirts.OrderByDescending(x => x.Size).ToList();
+            //PrintAllItems(shirts4);
+            //var shirts5 = myDatabase.tshirts.OrderBy(x => x.Fabric).ToList();
+            //PrintAllItems(shirts5);
+            //var shirts6 = myDatabase.tshirts.OrderByDescending(x => x.Fabric).ToList();
+            //PrintAllItems(shirts6);
 
 
-            var shirts7 = myDatabase.tshirts.OrderBy(x => x.Color).ThenBy(x=>x.Size).ToList();
-            PrintAllItems(shirts7);
-            var shirts8 = myDatabase.tshirts.OrderBy(x => x.Color).ThenBy(x=>x.Size).ThenBy(x=>x.Fabric).ToList();
-            PrintAllItems(shirts8);
+            //var shirts7 = myDatabase.tshirts.OrderBy(x => x.Color).ThenBy(x=>x.Size).ToList();
+            //PrintAllItems(shirts7);
+            //var shirts8 = myDatabase.tshirts.OrderBy(x => x.Color).ThenBy(x=>x.Size).ThenBy(x=>x.Fabric).ToList();
+            //PrintAllItems(shirts8);
 
-
-
-
-
-
-
-
-
-            //===========================bubble
+            MyDatabase myDatabase = new MyDatabase();
+            var sampleShirts = myDatabase.tshirts;
 
             Console.WriteLine("=================bubble==================");
+            //instatiate the delegate
+            SortingDelegate sortingDelegate = BubbleSort.SizeColorFablicDesc;
+            //call the delegate
+            sortingDelegate(sampleShirts);
+            PrintAllItems(sampleShirts);
 
-            List<Tshirt> tshirts = myDatabase.tshirts;
 
-            //...
 
             BubbleSort.SizeAsc(myDatabase.tshirts);// exeu  ginei pass by refence
 

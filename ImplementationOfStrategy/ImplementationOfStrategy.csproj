@@ -53,6 +53,8 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SortingAlgorithms\BubbleSort.cs" />
+    <Compile Include="SortingAlgorithms\Delegation.cs" />
+    <Compile Include="SortingAlgorithms\QuickSort.cs" />
     <Compile Include="Strategies\PaymentStrategy\BankTransfer.cs" />
     <Compile Include="Strategies\PaymentStrategy\Cash.cs" />
     <Compile Include="Strategies\PaymentStrategy\CreditCard.cs" />
