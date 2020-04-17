@@ -9,7 +9,7 @@ namespace ImplementationOfStrategy.GeneralUseItems
             //Ask an int from a user
             return Convert.ToInt32(Console.ReadLine());
 
-            //Try catch and negative checks are purposely eliminate for the scope of this assignment.
+            //Try catch and negative checks are purposely eliminated for the scope of this assignment.
         }
     }
 }
