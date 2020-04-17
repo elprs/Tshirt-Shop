@@ -31,8 +31,11 @@ namespace ImplementationOfStrategy
 
             //This menu will allow you to choose the way you want to sort the t-shirts. 
             //TIP: Bubble sort has extra features: the simultaneous sort of the 3 variations. 
+
             Print.SortingMenu();
+
             //This method will allow you to customise a T-shirt, and pay for it with your chosen method.
+
             Print.CustomTshirtMenu();
 
 
