@@ -6,7 +6,6 @@ namespace ImplementationOfStrategy.SortingAlgorithms
 {
     class BubbleSortHardCoded
     {
-
         //  ===================   Create methods for the delegate to use. =======================
 
         // Size-Color-Fablic Ascending
@@ -39,7 +38,6 @@ namespace ImplementationOfStrategy.SortingAlgorithms
             sortingDelegate(tshirts);
         }
 
-
         //Size ascending
         public static void SizeAsc(List<Tshirt> tshirts)
         {
@@ -57,6 +55,7 @@ namespace ImplementationOfStrategy.SortingAlgorithms
                 }
             }
         }
+
       //Color ascending
        public static void ColorAsc(List<Tshirt> tshirts)
         {
@@ -74,6 +73,7 @@ namespace ImplementationOfStrategy.SortingAlgorithms
                 }
             }
         }
+
       //Fabric ascending
        public static void FabricAsc(List<Tshirt> tshirts)
         {
@@ -91,9 +91,6 @@ namespace ImplementationOfStrategy.SortingAlgorithms
                 }
             }
         }
-     
-        
-
 
       //Size descending
        public static void SizeDesc(List<Tshirt> tshirts)
@@ -112,6 +109,7 @@ namespace ImplementationOfStrategy.SortingAlgorithms
                 }
             }
         }
+
       //Color descending
        public static void ColorDesc(List<Tshirt> tshirts)
         {
@@ -129,6 +127,7 @@ namespace ImplementationOfStrategy.SortingAlgorithms
                 }
             }
         }
+
       //Fabric descending
        public static void FabricDesc(List<Tshirt> tshirts)
         {
@@ -146,10 +145,5 @@ namespace ImplementationOfStrategy.SortingAlgorithms
                 }
             }
         }
-     
-
-
-
-
     }
 }

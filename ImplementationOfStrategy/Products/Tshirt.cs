@@ -16,7 +16,7 @@ namespace ImplementationOfStrategy.Products
             Fabric = fabric;
         }
 
-        public  Color Color { get; } //optrion to have it as readonly
+        public  Color Color { get; } //Option to have it as readonly
         public  Size Size { get; }
         public  Fabric Fabric { get; }
 
@@ -26,6 +26,5 @@ namespace ImplementationOfStrategy.Products
         {
             Console.WriteLine("{0, -15}{1, -15}{2, -15}", Color, Size, Fabric);
         }
-
     }
 }

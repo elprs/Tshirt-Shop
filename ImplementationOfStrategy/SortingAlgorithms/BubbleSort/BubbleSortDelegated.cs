@@ -2,15 +2,12 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using static ImplementationOfStrategy.SortingAlgorithms.Delegation;
 
 namespace ImplementationOfStrategy.SortingAlgorithms.BubbleSort
 {
     class BubbleSortDelegated
     {
-
         static List<Tshirt> PrepareSignature()
         {
             Console.ForegroundColor = ConsoleColor.Cyan;
@@ -25,9 +22,7 @@ namespace ImplementationOfStrategy.SortingAlgorithms.BubbleSort
             return shirts;
         }
 
-
-
-        // ******************** Delegated methods on 3 variations ************************
+        // ******************** Delegated methods on 3 variations simultaneously ************************
         static List<Tshirt> SizeColorFablicAsc()
         {
             List<Tshirt> shirts = PrepareSignature();
@@ -39,6 +34,7 @@ namespace ImplementationOfStrategy.SortingAlgorithms.BubbleSort
 
             return shirts;
         }
+
          static List<Tshirt> SizeColorFablicDesc()
         {
             List<Tshirt> shirts = PrepareSignature();
@@ -51,9 +47,7 @@ namespace ImplementationOfStrategy.SortingAlgorithms.BubbleSort
             return shirts;
         }
 
-
-
-        // ******************** Delegated methods on Color ************************
+        // ****************************** Delegated methods on Color ****************************
         static List<Tshirt> ColorAsc()
         {
             List<Tshirt> shirts = PrepareSignature();
@@ -78,7 +72,7 @@ namespace ImplementationOfStrategy.SortingAlgorithms.BubbleSort
 
             return shirts;
         }
-        // ********************* Delegated methods on Fabric ************************
+        // ********************* Delegated methods on Fabric ************************************
         static List<Tshirt> FabricAsc()
         {
             List<Tshirt> shirts = PrepareSignature();
@@ -101,7 +95,7 @@ namespace ImplementationOfStrategy.SortingAlgorithms.BubbleSort
 
             return shirts;
         }
-        // ******************** Delegated methods on Size ************************
+        // ******************** Delegated methods on Size ******************************************
         static List<Tshirt> SizeAsc()
         {
             List<Tshirt> shirts = PrepareSignature();
@@ -125,6 +119,7 @@ namespace ImplementationOfStrategy.SortingAlgorithms.BubbleSort
             return shirts;
         }
 
+        //Choose sorting
         public static List<Tshirt> ChooseSorting(int choice)
         {
             switch (choice)

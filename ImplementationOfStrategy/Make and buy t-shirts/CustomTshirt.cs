@@ -4,9 +4,6 @@ using ImplementationOfStrategy.Products;
 using ImplementationOfStrategy.Strategies.TshirtVariationStrategies;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ImplementationOfStrategy.Make_and_buy_t_shirts
 {
@@ -36,9 +33,9 @@ namespace ImplementationOfStrategy.Make_and_buy_t_shirts
             Console.WriteLine();
             EshopContext eshop = new EshopContext();
 
-            eshop.SetVariationStrategy(variationStrategies); // mporo n ato apofygo me ctror se EshopContex
+            eshop.SetVariationStrategy(variationStrategies);
 
-            // paymentMethod.
+            // Payment Method
 
             PaymentMethod paymentMethod = ChoosePaymentMethod();
             eshop.SelectPaymentMethod(paymentMethod);

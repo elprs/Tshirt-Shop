@@ -4,9 +4,6 @@ using ImplementationOfStrategy.Products;
 using ImplementationOfStrategy.SortingAlgorithms.BubbleSort;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ImplementationOfStrategy.SortingAlgorithms
 {
@@ -27,7 +24,6 @@ namespace ImplementationOfStrategy.SortingAlgorithms
                 shirt.Output();
             }
         }
-
 
          static void UserChoice(int algorithmChoice, int sortingChoice )
         {
@@ -100,7 +96,6 @@ namespace ImplementationOfStrategy.SortingAlgorithms
             Console.WriteLine();
             CustomTshirt.BuyShirt();
             Console.WriteLine();
-
         }
     }
 }

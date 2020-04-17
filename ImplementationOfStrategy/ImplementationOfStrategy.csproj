@@ -47,7 +47,7 @@
     <Compile Include="Enums\Fabric.cs" />
     <Compile Include="Enums\PaymentMethod.cs" />
     <Compile Include="Enums\Size.cs" />
-    <Compile Include="GeneralUseItems\UserInput.cs" />
+    <Compile Include="General\UserInput.cs" />
     <Compile Include="Make and buy t-shirts\CustomTshirt.cs" />
     <Compile Include="Make and buy t-shirts\EshopContext.cs" />
     <Compile Include="Database\MyDatabase.cs" />

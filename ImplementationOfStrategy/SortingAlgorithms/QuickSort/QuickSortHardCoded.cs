@@ -38,7 +38,6 @@ namespace ImplementationOfStrategy.SortingAlgorithms
             return i + 1;
         }
 
-
         // The main function that implements QuickSortHardCoded() 
         public static void ColorAsc(Tshirt[] tshirts, int low, int high)
         {
@@ -86,7 +85,6 @@ namespace ImplementationOfStrategy.SortingAlgorithms
             return i + 1;
         }
 
-
         /* The main function that implements QuickSortHardCoded() */
         public static void ColorDesc(Tshirt[] tshirts, int low, int high)
         {
@@ -105,6 +103,7 @@ namespace ImplementationOfStrategy.SortingAlgorithms
         }
 
         //================================= Sort by Fabric ======================================//
+
         // Partitioning
         static int partitionFabricAsc(Tshirt[] tshirts, int low, int high)
         {
@@ -182,7 +181,6 @@ namespace ImplementationOfStrategy.SortingAlgorithms
 
             return i + 1;
         }
-
 
         /* The main function that implements QuickSortHardCoded()  */
         public static void FabricDesc(Tshirt[] tshirts, int low, int high)

@@ -1,19 +1,16 @@
-﻿using ImplementationOfStrategy.Products;
+﻿using ImplementationOfStrategy.Enums;
+using ImplementationOfStrategy.Products;
 using ImplementationOfStrategy.Strategies.PaymentStrategy;
 using ImplementationOfStrategy.Strategies.TshirtVariationStrategies;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ImplementationOfStrategy.Enums;
-using System.Diagnostics.CodeAnalysis;
 
 namespace ImplementationOfStrategy
 {
     class EshopContext 
     {
         private IEnumerable<IVariationStrategy> _variations;
+        private IPaymentMethodStrategy _paymentMethod;
 
         public void SetVariationStrategy(List<IVariationStrategy> variations)
         {
@@ -26,27 +23,20 @@ namespace ImplementationOfStrategy
             foreach (var variation in _variations)
             {
                 variation.Cost(tshirt);
+                Console.ForegroundColor = ConsoleColor.Cyan;
                 Console.WriteLine(variation.GetType().Name + " " + tshirt.Price);
+                Console.ForegroundColor = ConsoleColor.White;
+
                 sum += tshirt.Price;
                 Console.WriteLine();
                            
                 //Tora prepei kapoiow Client(Front end ot Action method(contrtoller)) na aporrofisei tin katastash, afou 8a to zitisei 
             }
+
             Console.WriteLine("The total cost is {0:c}", sum);
         }
 
-
-
-
-
-
-        //==========================1 context me 2 statigikes!!!!!!!!!!!!!!!!!11==================================
-        //gaiti edo mesa eklpironetai to business logic
-        //mplekontai ta paterns
-
-        //protoimasia gia payments
-
-        private IPaymentMethodStrategy _paymentMethod; //auto einai property, 8a paei panw, alla gia katanoisi to ebala edw
+        //Choice of payment methods
 
         public void SelectPaymentMethod(PaymentMethod paymentMethod)
         {
@@ -63,8 +53,5 @@ namespace ImplementationOfStrategy
                     break;
             }
         }
-
-
-
     }
 }
