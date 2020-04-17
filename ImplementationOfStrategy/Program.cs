@@ -30,61 +30,50 @@ namespace ImplementationOfStrategy
 
 
             //MyDatabase myDatabase = new MyDatabase();
-            //PrintAllItems(myDatabase.tshirts);
+            //AllItems(myDatabase.tshirts);
 
             //var shirts1 = myDatabase.tshirts.OrderBy(x => x.Color).ToList();
-            //PrintAllItems(shirts1);
+            //AllItems(shirts1);
             //var shirts2 = myDatabase.tshirts.OrderByDescending(x => x.Color).ToList();
-            //PrintAllItems(shirts2);
+            //AllItems(shirts2);
             //var shirts3 = myDatabase.tshirts.OrderBy(x => x.Size).ToList();
-            //PrintAllItems(shirts3);
+            //AllItems(shirts3);
             //var shirts4 = myDatabase.tshirts.OrderByDescending(x => x.Size).ToList();
-            //PrintAllItems(shirts4);
+            //AllItems(shirts4);
             //var shirts5 = myDatabase.tshirts.OrderBy(x => x.Fabric).ToList();
-            //PrintAllItems(shirts5);
+            //AllItems(shirts5);
             //var shirts6 = myDatabase.tshirts.OrderByDescending(x => x.Fabric).ToList();
-            //PrintAllItems(shirts6);
+            //AllItems(shirts6);
 
 
             //var shirts7 = myDatabase.tshirts.OrderBy(x => x.Color).ThenBy(x=>x.Size).ToList();
-            //PrintAllItems(shirts7);
+            //AllItems(shirts7);
             //var shirts8 = myDatabase.tshirts.OrderBy(x => x.Color).ThenBy(x=>x.Size).ThenBy(x=>x.Fabric).ToList();
-            //PrintAllItems(shirts8);
+            //AllItems(shirts8);
 
             MyDatabase myDatabase = new MyDatabase();
             var sampleShirts = myDatabase.tshirts;
 
-            Console.WriteLine("=================bubble==================");
-            //instatiate the delegate
-            SortingDelegate sortingDelegate = BubbleSort.SizeColorFablicDesc;
-            //call the delegate
-            sortingDelegate(sampleShirts);
-            PrintAllItems(sampleShirts);
+            //Console.WriteLine("=================bubble==================");
+            ////instatiate the delegate
+            //BubbleDelegate sortingDelegate = BubbleSort.SizeColorFablicDesc;
+            ////call the delegate
+            //sortingDelegate(sampleShirts);
+            //AllItems(sampleShirts);
+
+            //BubbleSort.SizeAsc(myDatabase.tshirts);// exeu  ginei pass by refence
 
 
+            PrintAllItems(QuickSortDelegated.ColorAsc());
 
-            BubbleSort.SizeAsc(myDatabase.tshirts);// exeu  ginei pass by refence
 
+           
             Console.WriteLine("Press enter");
             Console.ReadLine();
         }
 
 
-        public static void PrintAllItems(IEnumerable<Tshirt> shirts) //MAGKIA!!!!!!!Eueliksia! 
-        {
-            Console.BackgroundColor = ConsoleColor.White;
-            Console.ForegroundColor = ConsoleColor.Black;
-            Console.WriteLine("All Clothes");
-            Console.BackgroundColor = ConsoleColor.Black;
-            Console.ForegroundColor = ConsoleColor.White;
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine("{0,-15}{1,-15}{2,-15}", "Color", "Size", "Fabric");
-            Console.ForegroundColor = ConsoleColor.White;
-            foreach (var item in shirts)
-            {
-                item.Output();
-            }
-        }
+      
 
 
     }
@@ -261,40 +250,6 @@ namespace ImplementationOfStrategy
 
         
     }
-
-    ////Bubble sort
-    //class MySort
-    //{
-    //    //Bubble sorting
-    //    //Trekse gi ato pli8os - 2
-    //    //an... ==> antimeta8esi
-    //    //bale mia bool . ksekina tin os true === > break;
-    //    public static void BubbleSort()
-    //    {
-    //        int[] arr = { 78, 55, 45, 98, 13 }; //pinakasa akeraivn antikeimenon
-    //        //eg: int[] arr = { new Int32(), new Int32(),  new Int32(), new Int32(),  new Int32() };
-    //        // new Int32().value = 78 ktl
-    //        //O int32 einai O struct
-
-    //        int temp;
-    //        for (int j = 0; j <= arr.Length - 2; j++)
-    //        {
-    //            for (int i = 0; i <= arr.Length - 2; i++)
-    //            {
-    //                if (arr[i] > arr[i + 1])
-    //                {
-    //                    temp = arr[i + 1];
-    //                    arr[i + 1] = arr[i];
-    //                    arr[i] = temp;
-    //                }
-    //            }
-    //        }
-    //        Console.WriteLine("Sorted:");
-    //        foreach (int p in arr)
-    //            Console.Write(p + " ");
-    //        Console.Read();
-    //    }
-    //}
 
    
 }

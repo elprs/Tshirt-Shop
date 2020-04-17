@@ -13,7 +13,7 @@ namespace ImplementationOfStrategy.SortingAlgorithms
         public static void SizeColorFablicAsc(List<Tshirt> tshirts)
         {
             //instantiate the delegate
-            SortingDelegate sortingDelegate = BubbleSort.FabricAsc;
+            BubbleDelegate sortingDelegate = BubbleSort.FabricAsc;
             // Call the delegate.
             sortingDelegate(tshirts);
 
@@ -28,7 +28,7 @@ namespace ImplementationOfStrategy.SortingAlgorithms
         public static void SizeColorFablicDesc(List<Tshirt> tshirts)
         {
             //instantiate the delegate
-            Delegation.SortingDelegate sortingDelegate = BubbleSort.FabricDesc;
+            Delegation.BubbleDelegate sortingDelegate = BubbleSort.FabricDesc;
             // Call the delegate.
             sortingDelegate(tshirts);
 
