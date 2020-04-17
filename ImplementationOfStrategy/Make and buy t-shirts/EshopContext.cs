@@ -7,19 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ImplementationOfStrategy.Enums;
+using System.Diagnostics.CodeAnalysis;
 
 namespace ImplementationOfStrategy
 {
-    class EshopContext //oli i douleia tou context einai ela kai dose mou modularity sto business logic.Single responsibility and seperation of comcerns
-        //Reponsibility : Business logic
+    class EshopContext 
     {
         private IEnumerable<IVariationStrategy> _variations;
-
-
-        //public EshopContext()
-        //{
-            //gia na apofygo to eshop.SetVariationStrategy(variationStrategies); sto BuyShirt()
-        //}
 
         public void SetVariationStrategy(List<IVariationStrategy> variations)
         {
@@ -28,11 +22,17 @@ namespace ImplementationOfStrategy
 
         public void TotalCostShirt(Tshirt tshirt) // An eixa polla edw 8a eixa IProduct 
         {
+            decimal sum = 0;
             foreach (var variation in _variations)
             {
                 variation.Cost(tshirt);
-                Console.WriteLine(variation.GetType().Name + " " + tshirt.Price); //tora prepei kapoiow Client(Front end ot Action method(contrtoller)) na aporrofisei tin katastash, afou 8a to zitisei 
+                Console.WriteLine(variation.GetType().Name + " " + tshirt.Price);
+                sum += tshirt.Price;
+                Console.WriteLine();
+                           
+                //Tora prepei kapoiow Client(Front end ot Action method(contrtoller)) na aporrofisei tin katastash, afou 8a to zitisei 
             }
+            Console.WriteLine("The total cost is {0:c}", sum);
         }
 
 

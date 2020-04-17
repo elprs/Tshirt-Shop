@@ -10,7 +10,7 @@ namespace ImplementationOfStrategy.Strategies.PaymentStrategy
     {
         public void Pay(decimal amount)
         {
-            Console.WriteLine($"Pay {amount} Credit card ... ");
+            Console.WriteLine($"Pay {amount} using Credit card.");
         }
     }
 }

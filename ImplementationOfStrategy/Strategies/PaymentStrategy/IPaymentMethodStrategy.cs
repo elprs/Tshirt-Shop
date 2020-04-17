@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace ImplementationOfStrategy.Strategies.PaymentStrategy
 {
-    interface IPaymentMethodStrategy //tha mporouse na einai abstract 
+    interface IPaymentMethodStrategy
     {
-        void Pay(decimal amount); //exo ftiaksei to interface tis stategy
+        void Pay(decimal amount);
     }
 }

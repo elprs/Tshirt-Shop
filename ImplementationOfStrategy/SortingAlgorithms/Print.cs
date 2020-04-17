@@ -1,4 +1,5 @@
-﻿using ImplementationOfStrategy.Make_and_buy_t_shirts;
+﻿using ImplementationOfStrategy.GeneralUseItems;
+using ImplementationOfStrategy.Make_and_buy_t_shirts;
 using ImplementationOfStrategy.Products;
 using ImplementationOfStrategy.SortingAlgorithms.BubbleSort;
 using System;
@@ -47,7 +48,7 @@ namespace ImplementationOfStrategy.SortingAlgorithms
             Console.WriteLine("Any other number: Bubble Sort");
             Console.ForegroundColor = ConsoleColor.White;
 
-            int algorithmChoice = Convert.ToInt32(Console.ReadLine());
+            int algorithmChoice = UserInput.AskNumber();
 
             if (algorithmChoice == 1)
             {
@@ -83,7 +84,7 @@ namespace ImplementationOfStrategy.SortingAlgorithms
                 Console.WriteLine();
                 Console.ForegroundColor = ConsoleColor.White;
             }
-            int variationChoice = Convert.ToInt32(Console.ReadLine());
+            int variationChoice = UserInput.AskNumber();
             Console.WriteLine();
 
             UserChoice(algorithmChoice, variationChoice);

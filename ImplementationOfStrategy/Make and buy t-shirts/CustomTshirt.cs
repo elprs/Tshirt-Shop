@@ -1,4 +1,5 @@
 ﻿using ImplementationOfStrategy.Enums;
+using ImplementationOfStrategy.GeneralUseItems;
 using ImplementationOfStrategy.Products;
 using ImplementationOfStrategy.Strategies.TshirtVariationStrategies;
 using System;
@@ -11,21 +12,10 @@ namespace ImplementationOfStrategy.Make_and_buy_t_shirts
 {
     class CustomTshirt
     {
-
-
-
         public static List<Tshirt> tshirts = new List<Tshirt>();
-
-
-        // TODO :  REFACTOR and make it  private static T Choose<T>()  .....................
 
         public static void BuyShirt()
         {
-            //skopos na setarei ta variations
-            //TODO refactoring : Naginetai apo tin class
-            //naeixes to tshirt kai auto na eixe tshirt.variation kai oxi o cxlient na kathorizei
-            //To tshirt na kathorizti ta variations tou 
-            // kai stin eshop.SetVariationStrategy(variationStrategies) tha eleges ela kai xose ta (tshirtVariations)
             List<IVariationStrategy> variationStrategies = new List<IVariationStrategy>()
             {
                 new ColorVariation(),
@@ -34,12 +24,16 @@ namespace ImplementationOfStrategy.Make_and_buy_t_shirts
 
              };
 
-            Color color = ChooseColor(); /// ++++++++++++++++++++++
-            Size size = ChooseSize();
-            Fabric fabric = ChooseFabric();
+            Color color = ChooseVariation<Color>(); 
+            Size size = ChooseVariation<Size>();
+            Fabric fabric = ChooseVariation<Fabric>();
 
             Tshirt shirt = new Tshirt(color, size, fabric);
-
+            Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine($"Your order is a {color}, {fabric}, {size} t-shirt");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine();
             EshopContext eshop = new EshopContext();
 
             eshop.SetVariationStrategy(variationStrategies); // mporo n ato apofygo me ctror se EshopContex
@@ -54,153 +48,55 @@ namespace ImplementationOfStrategy.Make_and_buy_t_shirts
 
         }
 
-        //Tis exo private gia na kano mia methodo apo panw pou tha exei tin eksis aksia
-
-
-        // kathari logiki 
-        //kalispera, kalinusta , dose mou variations
-        private static Color ChooseColor()
+        // ***************** Use of generics to let the user choose from the 3 Enum variations *********************** 
+         static T ChooseVariation<T>()
         {
             Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine("Choose {0}", typeof(Color).Name); // color typr.GetNAME....otan refactor!!!!!!!!!!!!!!!!!
+            Console.WriteLine("Choose {0}", typeof(T).Name);
             Console.ForegroundColor = ConsoleColor.White;
 
-            //thelo o xristis na epileksei apo mia lista epilogos olon ton enum alla de 8aleo na katantuso na pigaine gia 1-blue, gia 2-red ktl
-            //Thelo aneksartisia giauto 8a po ela kai vale se ena array 
-            Array colors = Enum.GetValues(typeof(Color)); //pare tis times me tipo color kai apo8ikeuse tes an yheleisse ena typo AAAAaaaaaarray. den einai array pou exei intex array[] oxi mana mou oxi oxi, einai allos type
-            int counter = 0;
+            //Using an Array for flexibility
+            Array items = Enum.GetValues(typeof(T));
 
-            foreach (var color in colors)
+            int counter = 0;
+            foreach (var item in items)
             {
-                Console.WriteLine("{0} --> {1}", ++counter, color);
+                Console.WriteLine("{0}  -->  {1}", ++counter, item);
             }
 
-            Color userColor = (Color)Convert.ToInt32(Console.ReadLine()); //2  douleis , prpei na spasei., leei choose ala kanei kai alla
+            //let the user choose a number for the menu
+            int number = UserInput.AskNumber();
 
-            return userColor;
+            //Parse the generic Enum type
+            T choice = (T)Enum.Parse(typeof(T), number.ToString());
 
+            // return user choice
+            return choice;
         }
 
+        //========================= Choose payment (non-enum choices) ==============================
 
-        private static Fabric ChooseFabric()
+         static PaymentMethod ChoosePaymentMethod()
         {
-            Console.WriteLine("Choose fabric");
-            //thelo o xristis na epileksei apo mia lista epilogos olon ton enum alla de 8aleo na katantuso na pigaine gia 1-blue, gia 2-red ktl
-            //Thelo aneksartisia giauto 8a po ela kai vale se ena array 
-            Array fabrics = Enum.GetValues(typeof(Fabric)); //pare tis times me tipo fabric kai apo8ikeuse tes an yheleisse ena typo AAAAaaaaaarray. den einai array pou exei intex array[] oxi mana mou oxi oxi, einai allos type
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("Choose payment Method");
+            Console.ForegroundColor = ConsoleColor.White;
+
+            //Use of Array for flexibility. 
+            Array paymentMethods = Enum.GetValues(typeof(PaymentMethod)); 
+
             int counter = 0;
-
-            foreach (var fabric in fabrics)
-            {
-                Console.WriteLine("{0} --> {1}", ++counter, fabric);
-            }
-
-            Fabric userFabric = (Fabric)Convert.ToInt32(Console.ReadLine());
-
-            return userFabric;
-
-        }
-
-
-
-        private static Size ChooseSize()
-        {
-            Console.WriteLine("Choose size");
-            //thelo o xristis na epileksei apo mia lista epilogos olon ton enum alla de 8aleo na katantuso na pigaine gia 1-blue, gia 2-red ktl
-            //Thelo aneksartisia giauto 8a po ela kai vale se ena array 
-            Array sizes = Enum.GetValues(typeof(Size)); //pare tis times me tipo size kai apo8ikeuse tes an yheleisse ena typo AAAAaaaaaarray. den einai array pou exei intex array[] oxi mana mou oxi oxi, einai allos type
-            int counter = 0;
-
-            foreach (var size in sizes)
-            {
-                Console.WriteLine("{0} --> {1}", ++counter, size);
-            }
-
-            Size userSize = (Size)Convert.ToInt32(Console.ReadLine());
-
-            return userSize;
-
-        }
-
-
-
-
-
-
-
-
-
-
-        //=========================choose payment // ktl
-
-
-
-
-
-        private static PaymentMethod ChoosePaymentMethod()
-        {
-            Console.WriteLine("Choose payment Method"); // paymentMethod typr.GetNAME....otan refactor!!!!!!!!!!!!!!!!!
-
-            //Thelo aneksartisia giauto 8a po ela kai vale se ena array 
-            Array paymentMethods = Enum.GetValues(typeof(PaymentMethod)); //pare tis times me tipo paymentMethod kai apo8ikeuse tes an yheleisse ena typo AAAAaaaaaarray. den einai array pou exei intex array[] oxi mana mou oxi oxi, einai allos type
-            int counter = 0;
-
             foreach (var paymentMethod in paymentMethods)
             {
                 Console.WriteLine("{0}    -{1}", ++counter, paymentMethod);
             }
 
-            PaymentMethod userPaymentMethod = (PaymentMethod)Convert.ToInt32(Console.ReadLine()); //2  douleis , prpei na spasei., leei choose ala kanei kai alla
+            //let the user choose a number for the menu
+            int number = UserInput.AskNumber();
+
+            PaymentMethod userPaymentMethod = (PaymentMethod)number; 
 
             return userPaymentMethod;
-
         }
-
-
-
-
-
-
-
-
-
-        //// TODO :  REFACTOR and make it  private static T Choose<T>()  .....................
-
-        //public static void BuyShirt()
-        //{
-        //    //skopos na setarei ta variations
-        //    //TODO refactoring : Naginetai apo tin class
-        //    //naeixes to tshirt kai auto na eixe tshirt.variation kai oxi o cxlient na kathorizei
-        //    //To tshirt na kathorizti ta variations tou 
-        //    // kai stin eshop.SetVariationStrategy(variationStrategies) tha eleges ela kai xose ta (tshirtVariations)
-        //    List<IVariationStrategy> variationStrategies = new List<IVariationStrategy>()
-        //    {
-        //        new ColorVariation(),
-        //        new FabricVariation(),
-        //        new SizeVariation()
-
-        //     };
-
-        //    Color color = ChooseColor(); /// ++++++++++++++++++++++
-        //    Size size = ChooseSize();
-        //    Fabric fabric = ChooseFabric();
-
-        //    Tshirt shirt = new Tshirt(color, size, fabric);
-
-        //    EshopContext eshop = new EshopContext();
-
-        //    eshop.SetVariationStrategy(variationStrategies); // mporo n ato apofygo me ctror se EshopContex
-
-        //    // paymentMethod.
-
-        //    PaymentMethod paymentMethod = ChoosePaymentMethod();
-        //    eshop.SelectPaymentMethod(paymentMethod);
-        //    eshop.TotalCostShirt(shirt);
-
-        //    tshirts.Add(shirt);
-
-        //}
-
-        
     }
 }
