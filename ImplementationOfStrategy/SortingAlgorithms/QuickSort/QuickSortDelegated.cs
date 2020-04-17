@@ -13,11 +13,11 @@ namespace ImplementationOfStrategy.SortingAlgorithms
         static Tshirt[] PrepareSignature(out int n)
         {
             Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine("****************** Quick sort by Color Ascending ****************");
+            Console.WriteLine("****************** Quick sort  ****************");
             Console.ForegroundColor = ConsoleColor.White;
 
             MyDatabase myDatabase = new MyDatabase();
-           
+
             //prepare signature parameters
             var shirts = myDatabase.tshirts.ToArray();
             n = shirts.Length - 1;
@@ -25,7 +25,7 @@ namespace ImplementationOfStrategy.SortingAlgorithms
             return shirts;
         }
         // ******************** Delegated methods on Color ************************
-         static Tshirt[] ColorAsc()
+        static Tshirt[] ColorAsc()
         {
             Tshirt[] shirts = PrepareSignature(out int n);
             //instatiate the delegate
@@ -36,7 +36,7 @@ namespace ImplementationOfStrategy.SortingAlgorithms
 
             return shirts;
         }
-         static Tshirt[] ColorDesc()
+        static Tshirt[] ColorDesc()
         {
             Tshirt[] shirts = PrepareSignature(out int n);
             //instatiate the delegate
@@ -48,7 +48,7 @@ namespace ImplementationOfStrategy.SortingAlgorithms
             return shirts;
         }
         // ********************* Delegated methods on Fabric ************************
-         static Tshirt[] FabricAsc()
+        static Tshirt[] FabricAsc()
         {
             Tshirt[] shirts = PrepareSignature(out int n);
             //instatiate the delegate
@@ -59,7 +59,7 @@ namespace ImplementationOfStrategy.SortingAlgorithms
 
             return shirts;
         }
-         static Tshirt[] FabricDesc()
+        static Tshirt[] FabricDesc()
         {
             Tshirt[] shirts = PrepareSignature(out int n);
             //instatiate the delegate
@@ -71,7 +71,7 @@ namespace ImplementationOfStrategy.SortingAlgorithms
             return shirts;
         }
         // ******************** Delegated methods on Size ************************
-         static Tshirt[] SizeAsc()
+        static Tshirt[] SizeAsc()
         {
             Tshirt[] shirts = PrepareSignature(out int n);
             //instatiate the delegate
@@ -82,7 +82,7 @@ namespace ImplementationOfStrategy.SortingAlgorithms
 
             return shirts;
         }
-         static Tshirt[] SizeDesc()
+        static Tshirt[] SizeDesc()
         {
             Tshirt[] shirts = PrepareSignature(out int n);
             //instatiate the delegate
@@ -93,6 +93,20 @@ namespace ImplementationOfStrategy.SortingAlgorithms
 
             return shirts;
         }
-        
+
+        public static Tshirt[] ChooseSorting(int choice)
+        {
+            switch (choice)
+            {
+                case 1: return ColorAsc();
+                case 2: return ColorDesc();
+                case 3: return FabricAsc();
+                case 4: return FabricDesc();
+                case 5: return SizeAsc();
+                case 6: return SizeDesc();
+                default: return ColorAsc();
+            }
+        }
+
     }
 }

@@ -4,7 +4,7 @@ using static ImplementationOfStrategy.SortingAlgorithms.Delegation;
 
 namespace ImplementationOfStrategy.SortingAlgorithms
 {
-    class BubbleSort
+    class BubbleSortHardCoded
     {
 
         //  ===================   Create methods for the delegate to use. =======================
@@ -13,14 +13,14 @@ namespace ImplementationOfStrategy.SortingAlgorithms
         public static void SizeColorFablicAsc(List<Tshirt> tshirts)
         {
             //instantiate the delegate
-            BubbleDelegate sortingDelegate = BubbleSort.FabricAsc;
+            BubbleDelegate sortingDelegate = BubbleSortHardCoded.FabricAsc;
             // Call the delegate.
             sortingDelegate(tshirts);
 
             //Repeat for the other 2 variations
-            sortingDelegate = BubbleSort.ColorAsc;
+            sortingDelegate = BubbleSortHardCoded.ColorAsc;
             sortingDelegate(tshirts);
-            sortingDelegate = BubbleSort.SizeAsc;
+            sortingDelegate = BubbleSortHardCoded.SizeAsc;
             sortingDelegate(tshirts);
         }
         
@@ -28,14 +28,14 @@ namespace ImplementationOfStrategy.SortingAlgorithms
         public static void SizeColorFablicDesc(List<Tshirt> tshirts)
         {
             //instantiate the delegate
-            Delegation.BubbleDelegate sortingDelegate = BubbleSort.FabricDesc;
+            Delegation.BubbleDelegate sortingDelegate = BubbleSortHardCoded.FabricDesc;
             // Call the delegate.
             sortingDelegate(tshirts);
 
             //Repeat for the other 2 variations
-            sortingDelegate = BubbleSort.ColorDesc;
+            sortingDelegate = BubbleSortHardCoded.ColorDesc;
             sortingDelegate(tshirts);
-            sortingDelegate = BubbleSort.SizeDesc;
+            sortingDelegate = BubbleSortHardCoded.SizeDesc;
             sortingDelegate(tshirts);
         }
 
