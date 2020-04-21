@@ -12,6 +12,10 @@ namespace ImplementationOfStrategy.SortingAlgorithms
         //Create a delegate for the quick sort choices
 
         public delegate void QuickSortDelegate(Tshirt[] tshirts, int low, int high);
+
+        //Create a delegate for the bucket sort choices
+
+        public delegate List<Tshirt> BucketDelegate(params Tshirt[] x);
     }
-    //Source: https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/delegates/using-delegates
+    
 }
