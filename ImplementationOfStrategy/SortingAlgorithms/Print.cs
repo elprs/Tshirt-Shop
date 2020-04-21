@@ -2,6 +2,7 @@
 using ImplementationOfStrategy.Make_and_buy_t_shirts;
 using ImplementationOfStrategy.Products;
 using ImplementationOfStrategy.SortingAlgorithms.BubbleSort;
+using ImplementationOfStrategy.SortingAlgorithms.BucketSort;
 using System;
 using System.Collections.Generic;
 
@@ -9,7 +10,7 @@ namespace ImplementationOfStrategy.SortingAlgorithms
 {
     public class Print
     {
-        static void AllItems(IEnumerable<Tshirt> shirts)
+         static void AllItems(IEnumerable<Tshirt> shirts)
         {
             Console.BackgroundColor = ConsoleColor.White;
             Console.ForegroundColor = ConsoleColor.Black;
@@ -31,6 +32,7 @@ namespace ImplementationOfStrategy.SortingAlgorithms
             {
                 case 1:  AllItems(QuickSortDelegated.ChooseSorting(sortingChoice)); break;
                 case 2: AllItems(BubbleSortDelegated.ChooseSorting(sortingChoice)); break;
+                case 3: AllItems(BucketSortDelegated.ChooseSorting(sortingChoice)); break;
                 default: AllItems(BubbleSortDelegated.ChooseSorting(sortingChoice)); break;
             }
         }
@@ -41,12 +43,13 @@ namespace ImplementationOfStrategy.SortingAlgorithms
             Console.WriteLine("How do you want to see you items sorted?");
             Console.WriteLine("1: Quick Sort");
             Console.WriteLine("2: Bubble Sort");
+            Console.WriteLine("3: Bucket Sort");
             Console.WriteLine("Any other number: Bubble Sort");
             Console.ForegroundColor = ConsoleColor.White;
 
             int algorithmChoice = UserInput.AskNumber();
 
-            if (algorithmChoice == 1)
+            if (algorithmChoice == 1 || algorithmChoice == 3)
             {
                 Console.ForegroundColor = ConsoleColor.Cyan;
                 Console.WriteLine("What do you want to see you items sorted by?");

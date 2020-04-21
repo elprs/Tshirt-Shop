@@ -10,7 +10,7 @@ namespace ImplementationOfStrategy
   /// 
   ///   Let the user choose the sorting of t-shirts.
   ///   Use of the strategy design pattern.
-  ///   Use of quick and bubble sort. 
+  ///   Use of quick, bucket and bubble sort. 
   ///   Use of generics.
   ///   Use of delegates
   ///   
@@ -24,7 +24,7 @@ namespace ImplementationOfStrategy
     {
         static void Main(string[] args)
         {
-            //Greek globalization system
+            // Greek globalization system
 
             Console.OutputEncoding = System.Text.Encoding.UTF8;
             CultureInfo.CurrentCulture = CultureInfo.CreateSpecificCulture("gr-GR");
@@ -46,5 +46,4 @@ namespace ImplementationOfStrategy
             Console.ReadLine();
         }
     }
-       
 }

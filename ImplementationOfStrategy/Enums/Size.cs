@@ -9,7 +9,7 @@ namespace ImplementationOfStrategy.Enums
    
         public enum Size
         {
-            XS = 1,
+            XS,
             S,
             M,
             L,

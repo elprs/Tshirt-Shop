@@ -56,6 +56,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SortingAlgorithms\BubbleSort\BubbleSortDelegated.cs" />
     <Compile Include="SortingAlgorithms\BubbleSort\BubbleSortHardCoded.cs" />
+    <Compile Include="SortingAlgorithms\BucketSort\BucketSortDelegated.cs" />
+    <Compile Include="SortingAlgorithms\BucketSort\BucketSortHardCoded.cs" />
     <Compile Include="SortingAlgorithms\Print.cs" />
     <Compile Include="SortingAlgorithms\QuickSort\QuickSortDelegated.cs" />
     <Compile Include="SortingAlgorithms\Delegation.cs" />
@@ -73,5 +75,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

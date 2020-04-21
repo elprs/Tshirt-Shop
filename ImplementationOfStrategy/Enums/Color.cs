@@ -8,7 +8,7 @@ namespace ImplementationOfStrategy.Enums
 {
     public enum Color
     {
-        Blue = 1,
+        Blue,
             Green,
             Indigo,
             Orange,
