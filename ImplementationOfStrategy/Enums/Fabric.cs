@@ -8,7 +8,7 @@ namespace ImplementationOfStrategy.Enums
 {
     public enum Fabric
     {
-        Casmere = 1,
+        Casmere,
         Cotton,
         Liner,
         Polyester,

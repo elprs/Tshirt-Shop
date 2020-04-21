@@ -9,7 +9,7 @@ namespace ImplementationOfStrategy.SortingAlgorithms
 {
     public class Print
     {
-        static void AllItems(IEnumerable<Tshirt> shirts)
+        public static void AllItems(IEnumerable<Tshirt> shirts)
         {
             Console.BackgroundColor = ConsoleColor.White;
             Console.ForegroundColor = ConsoleColor.Black;
